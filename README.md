@@ -1,1 +1,1 @@
-# pasange
+# pasange - SPA для продажи очков
