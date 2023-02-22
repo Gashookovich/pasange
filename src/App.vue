@@ -4,6 +4,7 @@
     <AllShopComponent />
     <nav-bar></nav-bar>
     <keep-alive> <router-view></router-view></keep-alive>
+    <FooterComponent />
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import NavBar from './components/NavBar.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
 import AllShopComponent from './components/AllShopComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
 
 export default {
@@ -19,6 +21,7 @@ export default {
     NavBar,
     NavbarComponent,
     AllShopComponent,
+    FooterComponent,
   },
 }
 </script>

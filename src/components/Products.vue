@@ -80,8 +80,8 @@ export default {
   width: 20%;
   height: 400px;
   line-height: 2;
-  position: fixed;
-  left: 50px;
+  position: relative;
+  left: 70px;
 }
 .product__left-block-head {
   font-size: 35px;
@@ -92,7 +92,7 @@ export default {
 }
 .product__right-block {
   width: 90%;
-  padding-left: 250px;
+  padding-left: 100px;
 }
 .product_list {
   width: 100%;
@@ -105,7 +105,7 @@ export default {
   display: flex;
   width: 170px;
   flex-direction: column;
-  margin: 15px 10px;
+  margin: 15px 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   justify-content: space-between;
 }
