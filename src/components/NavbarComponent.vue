@@ -6,13 +6,13 @@
             
         >
             <a id="home" href="#">
-                <span>Home</span>
+                <span>Главная</span>
             </a>
             <a id="action" href="#">
-                    <span>Action</span>
+                    <span>Действие</span>
             </a>
             <a id="new" href="#">
-                <span>New glasses</span>
+                <span>Новые поступления</span>
             </a>
         </Slide>
         <div class="navbar__name">Pasange</div>

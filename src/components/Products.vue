@@ -8,8 +8,8 @@
     </div>
     <div class="product__right-block">
       <ul class="product_list">
-        <li v-for="product in products" :key="product.id" class="product_item">
-          <img :src="product.image" class="item_image" />
+         <li v-for="product in products" :key="product.id" class="product_item">
+         <img :src="product.image" class="item_image" />
           <span class="item_name">{{ product.name }}</span>
           <span class="item_price">{{ product.price }} $</span>
           <div class="product_actions">

@@ -11,7 +11,7 @@
         <div v-for="p in products" :key="p.id">
           <div class="cart_item">
             <span>{{ p.name }}</span>
-            <span>Количсество: {{ p.quantity }}</span>
+            <span>Количество: {{ p.quantity }}</span>
             <span> {{ p.price * p.quantity }} $ </span>
             <div>
               <button

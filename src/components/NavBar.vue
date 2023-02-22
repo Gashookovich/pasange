@@ -1,12 +1,14 @@
 <template>
   <div class="menu">
     <nav>
-      <router-link class="router-link" to="/">Товары</router-link>
+      <router-link class="router-link" to="/">
+        Товары
+      </router-link>
     </nav>
     <div>
       <router-link class="router-link" to="/cart"
-        >Корзина ({{ itemsInCart }})</router-link
-      >
+        >Корзина ({{ itemsInCart }})
+      </router-link>
     </div>
   </div>
 </template>
