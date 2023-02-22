@@ -91,8 +91,8 @@ export default {
   cursor: pointer;
 }
 .product__right-block {
-  width: 70%;
-  padding-left: 100px;
+  width: 90%;
+  padding-left: 250px;
 }
 .product_list {
   width: 100%;
