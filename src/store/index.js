@@ -24,42 +24,42 @@ const state = {
       id: 2,
       image: image2,
       name: "glasses 2",
-      price: '50',
+      price: '10',
       quantity: 0,
     },
     {
       id: 3,
       image: image3,
       name: "glasses 3",
-      price: '50',
+      price: '60',
       quantity: 0,
     },
     {
       id: 4,
       image: image4,
       name: "glasses 4",
-      price: '50',
+      price: '10',
       quantity: 0,
     },
     {
       id: 5,
       image: image5,
       name: "glasses 5",
-      price: '50',
+      price: '30',
       quantity: 0,
     },
     {
       id: 6,
       image: image6,
       name: "glasses 6",
-      price: '50',
+      price: '40',
       quantity: 0,
     },
     {
       id: 7,
       image: image7,
       name: "glasses 7",
-      price: '50',
+      price: '20',
       quantity: 0,
     },
     {
@@ -70,16 +70,21 @@ const state = {
       quantity: 0,
     },
   ],
-  images: [
-      
-    // 6123150777, 6126039472, 6126040354, 6128597660, 6134992334, 6136170572,
-    // 6136172483, 6140906765, 6142673815, 6142681673, 6142683276, 6148226736,
-    // 6123150777, 6126039472, 6126040354, 6128597660, 6134992334, 6136170572,
-    // 6136172483, 6140906765, 6142673815, 6142681673, 6142683276, 6148226736,
+  selectedSort: '',
+  searchQuery: '',
+  sortOptions: [
+    {value: 'name', name: 'По названию'},
+    {value: 'price', name: 'По цене'},
   ],
 };
 
 const getters = {
+  sortedPosts(state)  {
+    return [...state.products].sort((product1, product2) => product1[state.selectedSort]?.localeCompare(product2[state.selectedSort]))
+  },
+  sortedAndSearchedPosts(state, getters) {
+    return getters.sortedPosts.filter(product => product.name.toLowerCase().includes(state.searchQuery.toLowerCase()))
+  },
   total(state, getters) {
     return getters.cartProducts.reduce((total, p) => {
       return total + p.price * p.quantity;
@@ -111,6 +116,12 @@ const actions = {
 };
 
 const mutations = {
+  setSelectedSort(state, selectedSort) {
+    state.selectedSort = selectedSort;
+  },
+  setSearchQuery(state, searchQuery) {
+    state.searchQuery = searchQuery;
+  },
   allProducts: (state, payload) => {
     payload.forEach((el) => {
       el.price = Math.floor(Math.random() * 5 + 10);

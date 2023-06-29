@@ -59,11 +59,11 @@ export default {
     checkout() {
       const string = this.products
         .map((item) => {
-          return item.dish + " " + item.quantity + " шт.";
+          return item.name + " " + item.quantity + " шт.";
         })
         .join("\n");
 
-      alert(string + "\nОбщая стоимость " + this.total + " руб.");
+      alert(string + "\nОбщая стоимость " + this.total + "$");
     },
   },
 };

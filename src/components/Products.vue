@@ -8,7 +8,7 @@
     </div>
     <div class="product__right-block">
       <ul class="product_list">
-         <li v-for="product in products" :key="product.id" class="product_item">
+         <li v-for="product in products" :key="product.id" class="product_item" >
          <img :src="product.image" class="item_image" />
           <span class="item_name">{{ product.name }}</span>
           <span class="item_price">{{ product.price }} $</span>
@@ -42,24 +42,52 @@
             </div>
           </div>
         </li>
-      </ul>
+      </ul> 
     </div>
+    <!-- <div class="find">
+      <SearchInput 
+        v-model="searchQuery"
+        placeholder="Поиск...."
+      />
+      <MySelect 
+          :model-value="selectedSort"
+          @update:model-value="setSelectedSort"
+          :options="sortOptions"
+      />
+    </div> -->
+    
   </div>
 </template>
 
 <script>
-import { mapState, mapActions, mapMutations } from "vuex";
+import { mapState, mapActions, mapMutations, mapGetters } from "vuex";
+// import SearchInput from "./UI/SearchInput.vue";
+// import MySelect from "./UI/MySelect.vue";
 
 export default {
   name: "products",
-
+  components: {
+    // SearchInput,
+    // MySelect
+  },
+  
   computed: {
-    ...mapState(["products"]),
+    ...mapState([
+      "products",
+      "selectedSort",
+      "sortOptions",
+      "searchQuery"
+    ]),
+    ...mapGetters([
+      "sortedPosts",
+      "sortedAndSearchedPosts"
+    ])
   },
   methods: {
     ...mapActions(["getProducts"]),
     ...mapMutations([
-      "addToLiked",
+      "setSelectedSort",
+      "setSearchQuery",
       "removeFromLiked",
       "addToCart",
       "removeFromCart",
@@ -150,10 +178,7 @@ export default {
   width: 120px;
   height: 42px;
 }
-.remove_like_button,
-.like_button {
-  width: 42px;
-  height: 42px;
-  background-color: transparent;
+.find {
+  position: absolute;
 }
 </style>
